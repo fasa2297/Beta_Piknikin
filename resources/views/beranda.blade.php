@@ -112,7 +112,7 @@
           <input type="file" id="value_fotoMuseum" onchange="showPreview(event);" accept="image/*" />
       </div>
       <br />
-      <input class="btn btn-primary" id="button_submit" type="submit" value="Buat Destinasi" style="width: 150px" onclick="ValidateForm()" />
+      <input class="btn btn-danger" id="button_submit" type="submit" value="Buat Destinasi" style="width: 150px" onclick="ValidateForm()" />
     </div>
   </form>
 </body>
