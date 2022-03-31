@@ -1,3 +1,12 @@
+**Pinknikin**
+> ABP IF4301 - Kelompok 2
+```
+Fauzi Arya Surya Abadi (1301194101)
+Anindika Riska Intan Fauzy (1301194254) 
+Muh Akib A Yani (1301194233)
+Zahra Fadiah Putri (1301194212) 
+```
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
