@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*----------Navbar*/
+.nav and {
+    font-weight: medium;
+    color: #383838;
+}
+.d-flex a {
+    margin-right: 30px;
+}
+.d-flex a:hover {
+    background-color: #1f1f1f;
+    border-radius: 0.5rem;
+    padding: 0.1rem;
+}
+/*Content*/
+.container-content {
+    width: 1400px;
+    height: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 0px 0px;
+}
+.left {
+    width: 500px;
+    height: 450px;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-right: 50px;
+    margin-bottom: 0px;
+}
+.right {
+    width: 600px;
+    height: 450px;
+    margin-top: -450px;
+    margin-left: 700px;
+    margin-right: 50px;
+    margin-bottom: 0px;
+}
+.harikekanan {
+    width: 250px;
+    margin-top: -220px;
+    margin-left: 260px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+#button_submit {
+    font-weight: bold;
+    margin-top: 80px;
+    margin-left: 600px;
+}
+#text-1 {
+    height: auto;
+    font-size: 20px;
+    margin-top: -10px;
+    margin-left: 101px;
+}
+#text-2 {
+    font-size: 35px;
+    margin-top: -20px;
+    margin-left: 100px;
+}
+
+#text-3,
+#text-4 {
+    color: #1f1f1f;
+    margin-left: 100px;
+}
+#text-4 {
+    margin-left: 700px;
+}
+.line-2 {
+    border-top: 3px solid #a3a3a3;
+    width: 85%;
+    margin-left: 7.2%;
+}

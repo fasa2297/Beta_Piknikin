@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+    margin: 0;
+    font-family: Poppins;
+}
+html {
+    background: url("../fileaset/Bg-loginpage.jpg") no-repeat center center
+        fixed;
+    background-color: #282828;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+#text-1 {
+    font-weight: bold;
+    font-size: 60px;
+    color: white;
+    margin: 280px 740px 0px 40px;
+}
+#text-2 {
+    font-weight: normal;
+    font-size: 25px;
+    color: white;
+    margin: -10px 740px 0px 42px; /*top right bottom left*/
+}
+#text-3 {
+    font-weight: normal;
+    font-size: 20px;
+    color: white;
+}
+#t-notif {
+    color: rgb(232, 69, 69);
+    position: absolute;
+    left: 7%;
+    top: 67%;
+}
+
+/*-----------------Footer*/
+.logo {
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    background-color: none;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+/*--------------Bordershape*/
+.bg-login {
+    height: 380px;
+    width: 400px;
+    background-color: rgb(31, 31, 31);
+    border-radius: 25px;
+    position: absolute;
+    left: 65%;
+    top: 25%;
+}
+
+/*--------------Login - label & input text*/
+#t-login {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+#t-username {
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+    position: absolute;
+    left: 28px;
+    top: 22%;
+}
+#t-password {
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+    position: absolute;
+    left: 28px;
+    top: 45%;
+}
+.Input-text {
+    display: block;
+    margin: 0;
+    padding: 0rem 0.5rem;
+    color: inherit;
+    width: 80%;
+    height: 40px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: inherit;
+    line-height: var(--inputLineHeight);
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow var(--transitionDuration);
+}
+#input_username {
+    position: absolute;
+    top: 31%;
+    left: 7%;
+}
+#input_password {
+    position: absolute;
+    top: 53%;
+    left: 7%;
+}
+
+/*-------------- Login - Button*/
+#text-4 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Poppins;
+}
+#button-login {
+    margin: 230px 145px 0px;
+    background-color: #818181;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 17px;
+    min-width: 110px;
+}
+#button-login:hover {
+    transition: 0.5s;
+    background-color: #525252;
+}
