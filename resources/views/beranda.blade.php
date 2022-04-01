@@ -105,8 +105,8 @@
       </div>
       <div class="in_fotoMuseum">
           <a>Foto Museum</a><a id="notifnull_Foto">&nbsp;</a><br/>
-          <label>*Hanya 1 foto berformat jpg/jpeg/png<br/>
-          ! Ulangi upload untuk mengganti file foto
+          <label>*Max hanya 1 foto .jpg/.jpeg/.png<br/>
+           *Ulangi upload untuk mengganti file foto
           </label><br /><br />
           <img id="image-preview" alt="image preview"/><br/>
           <input type="file" id="value_fotoMuseum" onchange="showPreview(event);" accept="image/*" />
