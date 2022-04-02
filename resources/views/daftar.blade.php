@@ -16,38 +16,50 @@
     @include('partials.navbar')
     <div class="container-content">
       <p id="text-1">Beranda</p>
-      <p id="text-2">Daftar wisata Museum</p>          
-      <table class="table table-striped">
+      <p id="text-2">Daftar wisata Museum</p> 
+      <table class="table table-hover table-bordered" style="text-align: center">
         <thead>
           <tr>
-            <th>Nama Museum</th>
-            <th>Edit</th>
-            <th>Hapus</th>
+            <th scope="col" class="col col-lg-1">No</th>
+            <th scope="col" class="col col-lg-3">Nama Museum</th>
+            <th id="col_ubah" scope="col" class="col col-lg-2">Ubah Data Museum</th>
+            <th id="col_hapus"  scope="col" class="col col-lg-2">Hapus Data Museum</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
+            <td scope="row mb-3">1</td>
+              <td>Mark</td>
+              <td><button id="button_ubah" type="button" class="btn btn-warning">Ubah</button></td>
+              <td><button id="button_hapus" type="button" class="btn btn-danger">Hapus</button></td>
           </tr>
         </tbody>
       </table>
     </div>
+
+
+    <!--
+    <div class="container-content">
+      <p id="text-1">Beranda</p>
+      <p id="text-2">Daftar wisata Museum</p>          
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th id="index">Nama Museum</th>
+            <th id="col_nama">Nama Museum</th>
+            <th id="col_edit">Edit</th>
+            <th id="col_hapus">Hapus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Museum</td>
+            <th><a type="Edit" id="edit" href="#">📝</a></th>
+            <th><a type="Hapus" id="hapus" href="#">❌</a></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  -->
 </body>
 </html>

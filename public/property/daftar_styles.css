@@ -27,29 +27,6 @@
     margin-right: auto;
     padding: 25px 0px 0px;
 }
-.left {
-    width: 500px;
-    height: 450px;
-    margin-top: 10px;
-    margin-left: 100px;
-    margin-right: 50px;
-    margin-bottom: 0px;
-}
-.right {
-    width: 600px;
-    height: 450px;
-    margin-top: -450px;
-    margin-left: 700px;
-    margin-right: 50px;
-    margin-bottom: 0px;
-}
-.harikekanan {
-    width: 250px;
-    margin-top: -220px;
-    margin-left: 260px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-}
 #button_submit {
     font-weight: bold;
     margin-top: 80px;
@@ -64,7 +41,9 @@
     font-size: 35px;
     margin-top: -20px;
 }
-
+#col_edit {
+    margin-left: 80%;
+}
 #text-3,
 #text-4 {
     color: #1f1f1f;
@@ -78,3 +57,13 @@
     width: 85%;
     margin-left: 7.2%;
 }
+/*
+#col_edit {
+    text-align: right;
+    flex: 1;
+}
+#button_edit {
+    position: absolute;
+    left: 55%;
+}
+*/
