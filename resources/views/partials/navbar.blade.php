@@ -7,7 +7,7 @@
     <div class="d-flex">
       <a class="navbar-brand" href="/beranda" onclick="Beranda()">Beranda</a>
       <a class="navbar-brand" href="/daftar" onclick="Daftar()">Daftar</a>
-      <a class="navbar-brand" href="/" onclick="Logout()">Keluar</a>
+      <a class="navbar-brand" href="/login" onclick="Logout()">Keluar</a>
     </div>
   </div>
 </nav>
