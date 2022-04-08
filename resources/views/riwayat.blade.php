@@ -15,15 +15,15 @@
 <body>
     @include('partials.navbar')
     <div class="container-content">
-      <p id="text-1">Riwayat Pengunjung</p>
+      <p id="text-1">Riwayat</p>
       <p id="text-2">Pembelian Tiket Wisata Museum</p>
       <table class="table table-hover table-bordered" style="text-align: center">
         <thead>
           <tr>
             <th scope="col" class="col col-lg-1">No</th>
-            <th scope="col" class="col col-lg-3">Nama Pemesan</th>
+            <th scope="col" class="col col-lg-2">Nama Pemesan</th>
             <th scope="col" class="col col-lg-3">Nama Museum</th>
-            <th scope="col" class="col col-lg-3">Jumlah Pesanan Tiket</th>
+            <th scope="col" class="col col-lg-2">Jumlah Pesanan Tiket</th>
             <th id="col_ubah" scope="col" class="col col-lg-2">Ubah Data Pesanan</th>
             <th id="col_hapus"  scope="col" class="col col-lg-2">Hapus Data Pesanan</th>
           </tr>
