@@ -24,7 +24,7 @@ use App\Http\Controllers\AdminController;
 Route::get('/login', [AdminController::class, 'index']);
 Route::get('/beranda', [AdminController::class, 'beranda']);
 Route::post('/save', [AdminController::class, 'store']);
-
+Route::get('/riwayat', [AdminController::class, 'riwayat']);
 Route::get('/daftar', [AdminController::class, 'daftar']);
 /* Laravel 8 (Also new Syntax)
 Route::get('/login', 'App\Http\Controllers\AdminController@index');

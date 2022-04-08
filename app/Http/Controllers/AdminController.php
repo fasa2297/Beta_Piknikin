@@ -22,7 +22,7 @@ class AdminController extends Controller
         return view ('beranda', compact('title'));
     }
     public function store(Request $request){
-        /*               
+        /*
         Museum::create([
             'nama' => $request('nama'),
             'alamat' => $request('alamat'),
@@ -30,7 +30,7 @@ class AdminController extends Controller
             'jambuka' => $request('jambuka'),
             'hargatiket' => $request('hargatiket'),
             'katagori' => $request('katagori')
-        ]);     
+        ]);
             */
             $museum->nama = $request->nama;
             $museum->alamat = $request->alamat;
@@ -39,13 +39,18 @@ class AdminController extends Controller
             $museum->hargatiket = $request->hargatiket;
             $museum->katagori = $request->katagori;
             $museum->save();
-         
-        //return redirect()->back();  
+
+        //return redirect()->back();
         return response()->json(['success' => true]);
     }
 
     public function daftar(){
         $title = "Daftar";
         return view ('daftar', compact('title'));
+    }
+
+    public function riwayat(){
+        $title = "Riwayat";
+        return view ('riwayat', compact('title'));
     }
 }
