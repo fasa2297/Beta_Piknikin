@@ -17,7 +17,7 @@
     <div class="container-content">
     <!--form action="/beranda" name="inputanData" id="inputanForm" class="btn-submit" method="post">
       @csrf </form-->
-      @include('partials.input') 
+      @include('partials.input')
       <div class="in_fotoMuseum">
         <p>Foto Museum<a id="notifnull_Foto">&nbsp;</a></p>
         <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#uploadfoto">Pilih Foto</button>
@@ -39,12 +39,12 @@
               </div>
             </div>
           </div>
-        </div> 
-        <img id="image-preview" alt="image preview"/><br/>  
+        </div>
+        <img id="image-preview" alt="image preview"/><br/>
         <ul id="savefrom_errList"></ul>
-      </div> 
+      </div>
       <br/>
-      <button class="btn btn-danger run" id="button_submit" type="submit" value="Buat Destinasi" style="width: 150px" onclick="ValidateForm()">Buat Destinasi</button> 
+      <button class="btn btn-danger run" id="button_submit" type="submit" value="Buat Destinasi" style="width: 150px" onclick="ValidateForm()">Buat Destinasi</button>
     </div>
 </body>
 <script  type="text/javascript">
@@ -66,7 +66,7 @@
             const mg = document.getElementById("t_minggu").value;
             let schedule = (sn+" "+sl+" "+rb+" "+km+" "+jm+" "+sb+" "+mg);
             let ktg = document.querySelector('input[name="ktg"]:checked').value;
-            
+
             let nama= $("#value_namaMuseum").val();
             let alamat= $("#value_alamatMuseum").val();
             let deskripsi= $("#value_deskripsiMuseum").val();
@@ -74,7 +74,7 @@
             let hargatiket= $("#value_hargaMuseum").val();
             let katagori= ktg;
             let namafoto= null;
-            
+
             $.ajax({
               url: "/save",
               type:"POST",
@@ -94,7 +94,7 @@
               statusCode: {
                 500: function(){
                          alert("Error");
-                     } 
+                     }
               }
             });
         });
@@ -121,7 +121,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        
+
         $.ajax({
             type:"POST",
             url:"/beranda",
@@ -145,6 +145,6 @@
               }
             }
         });*/
-</script>   
+</script>
 
 </html>
