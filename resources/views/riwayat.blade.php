@@ -20,50 +20,31 @@
       <table class="table table-hover table-bordered" style="text-align: center">
         <thead>
           <tr>
-            <th scope="col" class="col col-lg-1">No</th>
+            <th scope="col" class="col col-lg-0">No</th>
             <th scope="col" class="col col-lg-2">Nama Pemesan</th>
-            <th scope="col" class="col col-lg-3">Nama Museum</th>
+            <th scope="col" class="col col-lg-2">Nama Museum</th>
+            <th scope="col" class="col col-lg-1">Tanggal</th>
+            <th scope="col" class="col col-lg-1">No Telepon</th>
             <th scope="col" class="col col-lg-2">Jumlah Pesanan Tiket</th>
-            <th id="col_ubah" scope="col" class="col col-lg-2">Ubah Data Pesanan</th>
-            <th id="col_hapus"  scope="col" class="col col-lg-2">Hapus Data Pesanan</th>
+            <th scope="col" class="col col-lg-2">Total Harga Tiket</th>
+            <th id="col_ubah" scope="col" class="col col-lg-1">Ubah Data Pesanan</th>
+            <th id="col_hapus"  scope="col" class="col col-lg-1">Hapus Data Pesanan</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td scope="row mb-3">1</td>
+            <td scope="row mb-9">1</td>
               <td>Joko</td>
               <td>Museum Sonobudoyo</td>
+              <td>20/04/22</td>
+              <td>081224356897</td>
               <td>2</td>
-              <td><button id="button_ubah" type="button" class="btn btn-warning">Ubah</button></td>
-              <td><button id="button_hapus" type="button" class="btn btn-danger">Hapus</button></td>
+              <td>60.000</td>
+              <td><button id="button_ubah" type="button" class="btn btn-warning" href="/edit">Ubah</button></td>
+              <td><button id="button_hapus" type="button" class="btn btn-danger" href="/delete">Hapus</button></td>
           </tr>
         </tbody>
       </table>
     </div>
-
-
-    <!--
-    <div class="container-content">
-      <p id="text-1">Beranda</p>
-      <p id="text-2">Daftar wisata Museum</p>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th id="index">Nama Museum</th>
-            <th id="col_nama">Nama Museum</th>
-            <th id="col_edit">Edit</th>
-            <th id="col_hapus">Hapus</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Museum</td>
-            <th><a type="Edit" id="edit" href="#">📝</a></th>
-            <th><a type="Hapus" id="hapus" href="#">❌</a></th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  -->
 </body>
 </html>

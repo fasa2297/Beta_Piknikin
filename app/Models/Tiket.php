@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Tiket extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id';
+    public $incrementing = false;
     protected $table ='tiket';
     protected $filltable = [
         'namapemesan',
