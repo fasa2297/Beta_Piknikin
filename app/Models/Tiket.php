@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Tiket extends Model
 {
     use HasFactory;
+    protected $table ='tiket';
+    protected $filltable = [
+        'namapemesan',
+        'namamuseum',
+        'tanggal',
+        'notelp',
+        'jumlahtiket',
+        'totalHrgtiket',
+    ];
 }

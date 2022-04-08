@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('tikets', function (Blueprint $table) {
             $table->id();
+            $table->string('namapemesan');
+            $table->string('namamuseum');
+            $table->string('tanggal');
+            $table->string('notelp');
+            $table->string('jumlahtiket');
+            $table->string('totalHrgtiket');
             $table->timestamps();
         });
     }
