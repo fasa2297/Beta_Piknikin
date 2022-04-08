@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -15,25 +17,35 @@ class AdminController extends Controller
         $title = "Beranda";
         return view ('beranda', compact('title'));
     }
+    public function create(){
+        $title = "Beranda";
+        return view ('beranda', compact('title'));
+    }
+    public function store(Request $request){
+        /*               
+        Museum::create([
+            'nama' => $request('nama'),
+            'alamat' => $request('alamat'),
+            'deskripsi' => $request('deskripsi'),
+            'jambuka' => $request('jambuka'),
+            'hargatiket' => $request('hargatiket'),
+            'katagori' => $request('katagori')
+        ]);     
+            */
+            $museum->nama = $request->nama;
+            $museum->alamat = $request->alamat;
+            $museum->deskripsi = $request->deskripsi;
+            $museum->jambuka = $request->jambuka;
+            $museum->hargatiket = $request->hargatiket;
+            $museum->katagori = $request->katagori;
+            $museum->save();
+         
+        //return redirect()->back();  
+        return response()->json(['success' => true]);
+    }
+
     public function daftar(){
         $title = "Daftar";
         return view ('daftar', compact('title'));
     }
 }
-
-/*
-Notes:
-public function index(){
-       //Array
-       $data = [
-           'ItemsOne' => 'ImageA',
-           'ItemTwo' => ImageB
-       ];
-    }
-access with
-@foreach($data as $item)
-    <p>
-        {{ $item }}
-    </p.
-@endforeach
-*/

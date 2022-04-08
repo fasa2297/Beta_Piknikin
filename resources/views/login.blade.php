@@ -32,7 +32,7 @@
               }
             });
           </script>
-          <button id="button-login" onclick="ValidateLogin()"><b id="text-4">Login</b></button>
+          <button id="button-login"><a id="text-4" onclick="Beranda()">Login</a</button>
         </form>
         </div>
       </div>
