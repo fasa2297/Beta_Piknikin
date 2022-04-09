@@ -9,8 +9,9 @@ class RiwayatController extends Controller
 {
     public function index()
     {
-        $prods = Tiket::get();
-        return view('riwayat.index', ['list' => $prods]);
+        $title = "Riwayat";
+        $prod = Tiket::all();
+        return view('riwayat.index', ['lists' => $prod, 'title' => $title]);
     }
     public function show($id)
     {
@@ -42,10 +43,5 @@ class RiwayatController extends Controller
     {
         Tiket::destroy($id);
         return redirect('/riwayat')->with('msg', 'Data Pemesanan Tiket Berhasil Dihapus');
-    }
-
-    public function riwayat(){
-        $title = "Riwayat";
-        return view ('riwayat', compact('title'));
     }
 }

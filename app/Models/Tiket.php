@@ -10,7 +10,7 @@ class Tiket extends Model
     use HasFactory;
     protected $primaryKey = 'id';
     public $incrementing = false;
-    protected $table ='tiket';
+    protected $table ='tikets';
     protected $filltable = [
         'namapemesan',
         'namamuseum',
