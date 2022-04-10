@@ -15,7 +15,7 @@
         <br />
         <div class="in_deskripsiMuseum">
           <a>Deskripsi Museum</a><a id="notifnull_Deskripsi">&nbsp;</a><br />
-          <textarea id="value_deskripsiMuseum"></textarea>
+          <textarea name="value_deskripsiMuseum" id="value_deskripsiMuseum"></textarea>
         </div>
         <br />
     </div>

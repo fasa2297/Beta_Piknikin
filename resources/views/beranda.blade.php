@@ -15,8 +15,6 @@
 <body>
     @include('partials.navbar') <!--(Navbar) this part moved in partials/navbar-->
     <div class="container-content">
-    <!--form action="/beranda" name="inputanData" id="inputanForm" class="btn-submit" method="post">
-      @csrf </form-->
       @include('partials.input')
       <div class="in_fotoMuseum">
         <p>Foto Museum<a id="notifnull_Foto">&nbsp;</a></p>
@@ -47,13 +45,9 @@
       <button class="btn btn-danger run" id="button_submit" type="submit" value="Buat Destinasi" style="width: 150px" onclick="ValidateForm()">Buat Destinasi</button>
     </div>
 </body>
-<script  type="text/javascript">
-      $.ajaxSetup({
-          headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          }
-      });
 
+
+<script  type="text/javascript">
       $(document).ready(function () {
         $(document).on("click", ".run", function (e) {
             e.preventDefault();
@@ -66,85 +60,40 @@
             const mg = document.getElementById("t_minggu").value;
             let schedule = (sn+" "+sl+" "+rb+" "+km+" "+jm+" "+sb+" "+mg);
             let ktg = document.querySelector('input[name="ktg"]:checked').value;
-
-            let nama= $("#value_namaMuseum").val();
-            let alamat= $("#value_alamatMuseum").val();
-            let deskripsi= $("#value_deskripsiMuseum").val();
-            let jambuka= schedule;
-            let hargatiket= $("#value_hargaMuseum").val();
-            let katagori= ktg;
-            let namafoto= null;
+           
+            var data = {
+              'nama'      : $('#value_namaMuseum').val(),
+              'alamat'    : $('#value_alamatMuseum').val(),
+              'deskripsi' : $('#value_deskripsiMuseum').val(),
+              'jambuka'   : schedule,
+              'hargatiket': $('#value_hargaMuseum').val(),
+              'katagori'  : ktg,
+              'namafoto'  : "null",
+            };
+            console.log(data);
+            $.ajaxSetup({
+                headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
             $.ajax({
-              url: "/save",
-              type:"POST",
-              data:{
-                "_token": "{{ csrf_token() }}",
-                nama: nama,
-                alamat: alamat,
-                deskripsi: deskripsi,
-                jambuka: jambuka,
-                hargatiket: hargatiket,
-                katagori: katagori,
-                namafoto: namafoto,
-              },
-              success:function(response){
-                  alert("OKe");
-              },
-              statusCode: {
-                500: function(){
-                         alert("Error");
-                     }
-              }
-            });
-        });
+                url: "/beranda",
+                type:"POST",
+                data:data,
+                dataType: "json",
+                success:function(response){
+                    alert("OKe");
+                },
+                statusCode: {
+                  500: function(){
+                          alert("Error");
+                      }
+                }
+            });  
+          });
       });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-<script>
-        /*
-        var data = {
-            nama: $("#value_namaMuseum").val(),
-            alamat: $("#value_alamatMuseum").val(),
-            deskripsi: $("#value_deskripsiMuseum").val(),
-            jambuka: schedule,
-            hargatiket: $("#value_hargaMuseum").val(),
-            katagori: ktg,
-            namafoto: null
-        };
-
-        console.log(data);
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            type:"POST",
-            url:"/beranda",
-            data: data,
-            datatype: "json",
-            succes: function (response){
-              console.log(response)
-              /*
-              if(resoinse.status == 400){
-
-                $('#savefrom_errList').html("");
-                $('#savefrom_errList').addClass('alert alert-danger');
-                $.each(response.errors, function(key, err_values){
-                  $('#savefrom_errList').append('<li>'+err_values+'</li>')
-                });
-              }
-              else{
-                $('#saveform_errList').html("");
-                $('#success_message').addClass('alert alert-success')
-                $('#success-message').text(response.message)
-              }
-            }
-        });*/
-</script>
-
 </html>

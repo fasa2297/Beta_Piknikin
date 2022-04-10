@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Museum extends Model
 {
     use HasFactory;
-    protected $table ='museum';
+    protected $table ='museums';
     protected $filltable = [
         'nama',
         'alamat',

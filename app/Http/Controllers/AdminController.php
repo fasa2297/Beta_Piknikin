@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Museum;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -22,26 +23,21 @@ class AdminController extends Controller
         return view ('beranda', compact('title'));
     }
     public function store(Request $request){
-        /*
-        Museum::create([
-            'nama' => $request('nama'),
-            'alamat' => $request('alamat'),
-            'deskripsi' => $request('deskripsi'),
-            'jambuka' => $request('jambuka'),
-            'hargatiket' => $request('hargatiket'),
-            'katagori' => $request('katagori')
-        ]);
-            */
-            $museum->nama = $request->nama;
-            $museum->alamat = $request->alamat;
-            $museum->deskripsi = $request->deskripsi;
-            $museum->jambuka = $request->jambuka;
-            $museum->hargatiket = $request->hargatiket;
-            $museum->katagori = $request->katagori;
-            $museum->save();
 
-        //return redirect()->back();
-        return response()->json(['success' => true]);
+    
+       $museum = new Museum;
+       $museum->nama = $request->input('nama');
+       $museum->alamat = $request->input('alamat');
+       $museum->deskripsi = $request->input('deskripsi');
+       $museum->jambuka = $request->input('jambuka');
+       $museum->hargatiket = $request->input('hargatiket');
+       $museum->katagori = $request->input('katagori');
+       $museum->namafoto = $request->input('namafoto');
+       $museum->save();
+        
+        return json_encode(array(
+            "statusCode"=>200
+        ));
     }
 
     public function daftar(){
