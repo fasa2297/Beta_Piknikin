@@ -20,7 +20,6 @@
         <p id="t-password">Password</p>
         <p id="t-notif"></p>
         <div class="Input">
-        <form action=>
           <input type="text" id="input_username" class="Input-text" placeholder="&nbsp;Username" require="" />
           <input type="password" id="input_password" class="Input-text" placeholder="&nbsp;Password" require="" />
           <script>
@@ -32,8 +31,7 @@
               }
             });
           </script>
-          <button id="button-login"><a id="text-4" onclick="Beranda()">Login</a</button>
-        </form>
+          <button id="button-login"><a id="text-4" onclick="ValidateLogin()">Login</a</button>
         </div>
       </div>
     </div>

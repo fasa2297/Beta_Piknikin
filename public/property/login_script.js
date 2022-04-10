@@ -1,5 +1,5 @@
 function Beranda() {
-    window.location.href = "/beranda";
+    window.location.replace("/beranda");
 }
 function ValidateLogin() {
     let usr = document.getElementById("input_username").value.toString();

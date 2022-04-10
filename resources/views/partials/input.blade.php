@@ -83,7 +83,7 @@
         <div class="in_katagoriMuseum">
           <a>Katagori Museum</a><br />
           
-          <input type="radio" id="check1" name="ktg" value="Seni"/>&nbsp;Seni<br />
+          <input type="radio" id="check1" name="ktg" value="Seni" checked="checked"/>&nbsp;Seni<i style="font-size: 10px; color:grey">&nbsp;&nbsp;(default)</i><br />
           <input type="radio" id="check2" name="ktg" value="Budaya"/>&nbsp;Budaya<br />
           <input type="radio" id="check3" name="ktg" value="Sejarah"/>&nbsp;Sejarah
         </div>

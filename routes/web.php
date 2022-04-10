@@ -21,13 +21,17 @@ use App\Http\Controllers\RiwayatController;
 */
 //------ Login Page -------
 
+//Route Login
 Route::get('/login', [AdminController::class, 'index']);
 
+//Route Beranda
 Route::get('/beranda', [AdminController::class, 'beranda']);
 Route::post('/beranda', [AdminController::class, 'store']);
 
+//Route Daftar
 Route::get('/daftar', [AdminController::class, 'daftar']);
 
+//Route Riwayat
 Route::get('/riwayat', [RiwayatController::class, 'index'])->name('index');
 Route::get('/riwayat/{id}', [RiwayatController::class, 'show'])->name('show');
 Route::get('/riwayat/{id}/edit', [RiwayatController::class, 'edit'])->name('edit');

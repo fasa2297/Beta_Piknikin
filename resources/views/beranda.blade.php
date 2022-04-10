@@ -60,59 +60,55 @@
             const sb = document.getElementById("t_sabtu").value;
             const mg = document.getElementById("t_minggu").value;
             let schedule = (sn+" "+sl+" "+rb+" "+km+" "+jm+" "+sb+" "+mg);
-            let ktg = document.querySelector('input[name="ktg"]:checked').value;
-            
+
             var nama      = $('#value_namaMuseum').val();
             var alamat    = $('#value_alamatMuseum').val();
             var deskripsi = $('#value_deskripsiMuseum').val();
             var jambuka   = schedule;
             var hargatiket= $('#value_hargaMuseum').val();
-            var katagori  = ktg;
+            var katagori  = document.querySelector('input[name="ktg"]:checked').value;
             var namafoto  = $('#value_fotoMuseum').val();
 
-            fd = new FormData();
-            fd.append('nama', nama);
-            fd.append('alamat', alamat);
-            fd.append('deskripsi', deskripsi);
-            fd.append('jambuka', jambuka);
-            fd.append('hargatiket',hargatiket);
-            fd.append('katagori', katagori);
-            fd.append('namafoto', $('#value_fotoMuseum').get(0).files[0]);
-            /*
-            var data = {
-              'nama'      : $('#value_namaMuseum').val(),
-              'alamat'    : $('#value_alamatMuseum').val(),
-              'deskripsi' : $('#value_deskripsiMuseum').val(),
-              'jambuka'   : schedule,
-              'hargatiket': $('#value_hargaMuseum').val(),
-              'katagori'  : ktg,
-              'namafoto'  : $('#value_fotoMuseum').get(0).files(0);,//$('#value_fotoMuseum').files;
-            };*/
-            console.log(fd);
-            $.ajaxSetup({
-                headers: {
-                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+            if(nama!="" || alamat!="" || deskripsi!="" || hargatiket!=""){
+              fd = new FormData();
+              fd.append('nama', nama);
+              fd.append('alamat', alamat);
+              fd.append('deskripsi', deskripsi);
+              fd.append('jambuka', jambuka);
+              fd.append('hargatiket',hargatiket);
+              fd.append('katagori', katagori);
+              fd.append('namafoto', $('#value_fotoMuseum').get(0).files[0]);
+              
+              console.log(fd);
+              $.ajaxSetup({
+                  headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  }
+              });
 
-            $.ajax({
-                url: "/beranda",
-                type:"POST",
-                enctype: 'multipart/form-data',
-                processData: false,
-                contentType: false,
-                cache: false,
-                data: fd,//data
-                dataType: "json",
-                success:function(response){
-                    alert("Informasi museum berhasil dibuat, Silahkan cek pada menu Daftar");
-                },
-                statusCode: {
-                  500: function(){
-                          alert("Error");
-                      }
-                }
-            });  
+              $.ajax({
+                  url: "/beranda",
+                  type:"POST",
+                  enctype: 'multipart/form-data',
+                  processData: false,
+                  contentType: false,
+                  cache: false,
+                  data: fd,//data
+                  dataType: "json",
+                  success:function(response){
+                      alert("Informasi museum berhasil dibuat, Anda akan diarahkan ke menu Daftar");
+                      //location.reload();
+                      window.location.replace("/daftar")
+                  },
+                  statusCode: {
+                    500: function(){
+                            alert("Error");
+                        }
+                  }
+              });
+            }else{
+              alert("Silahkan inputkan data");
+            }  
           });
       });
 </script>
