@@ -24,7 +24,6 @@ class AdminController extends Controller
     }
     public function store(Request $request){
 
-    
        $museum = new Museum;
        $museum->nama = $request->input('nama');
        $museum->alamat = $request->input('alamat');
@@ -32,8 +31,16 @@ class AdminController extends Controller
        $museum->jambuka = $request->input('jambuka');
        $museum->hargatiket = $request->input('hargatiket');
        $museum->katagori = $request->input('katagori');
-       $museum->namafoto = $request->input('namafoto');
-       $museum->save();
+       
+       //$museum->namafoto = $request->input('namafoto');
+       if($request->hasFile('namafoto')) {
+            $file = $request->file('namafoto');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('uploads/dataImage', $filename);
+            $museum->namafoto = $filename;
+        }
+        $museum->save();
         
         return json_encode(array(
             "statusCode"=>200

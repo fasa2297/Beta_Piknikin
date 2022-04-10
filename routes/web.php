@@ -20,11 +20,12 @@ use App\Http\Controllers\RiwayatController;
     OPTIONS - Ask the server which verbs are alowed
 */
 //------ Login Page -------
-//  GET
-// Laravel 8 (new Syntax)
+
 Route::get('/login', [AdminController::class, 'index']);
+
 Route::get('/beranda', [AdminController::class, 'beranda']);
 Route::post('/beranda', [AdminController::class, 'store']);
+
 Route::get('/daftar', [AdminController::class, 'daftar']);
 
 Route::get('/riwayat', [RiwayatController::class, 'index'])->name('index');

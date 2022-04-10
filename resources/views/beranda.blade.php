@@ -9,13 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="property/beranda_script.js"></script>
-
+    
     <title>Piknikin | {{ $title }}</title>
 </head>
 <body>
     @include('partials.navbar') <!--(Navbar) this part moved in partials/navbar-->
     <div class="container-content">
-      @include('partials.input')
+    <form method="post" action="/beranda" enctype="multipart/form-data">
+      @include('partials.input') <!--(Some parts of input) this part moved in partials/input-->
       <div class="in_fotoMuseum">
         <p>Foto Museum<a id="notifnull_Foto">&nbsp;</a></p>
         <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#uploadfoto">Pilih Foto</button>
@@ -30,7 +31,7 @@
                 <label>
                 *Maksimal hanya 1 foto dalam 1 file .jpg/.jpeg/.png<br/>
                 *Ulangi unggah foto untuk merubah file foto</label><br/><br/>
-                <input type="file" id="value_fotoMuseum" onchange="showPreview(event);" accept="image/*"/>
+                <input type="file" id="value_fotoMuseum" name="value_fotoMuseum" onchange="showPreview(event);" accept="image/*"/>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" id="showimage">Simpan</button>
@@ -43,9 +44,9 @@
       </div>
       <br/>
       <button class="btn btn-danger run" id="button_submit" type="submit" value="Buat Destinasi" style="width: 150px" onclick="ValidateForm()">Buat Destinasi</button>
+    </form>
     </div>
 </body>
-
 
 <script  type="text/javascript">
       $(document).ready(function () {
@@ -60,7 +61,24 @@
             const mg = document.getElementById("t_minggu").value;
             let schedule = (sn+" "+sl+" "+rb+" "+km+" "+jm+" "+sb+" "+mg);
             let ktg = document.querySelector('input[name="ktg"]:checked').value;
-           
+            
+            var nama      = $('#value_namaMuseum').val();
+            var alamat    = $('#value_alamatMuseum').val();
+            var deskripsi = $('#value_deskripsiMuseum').val();
+            var jambuka   = schedule;
+            var hargatiket= $('#value_hargaMuseum').val();
+            var katagori  = ktg;
+            var namafoto  = $('#value_fotoMuseum').val();
+
+            fd = new FormData();
+            fd.append('nama', nama);
+            fd.append('alamat', alamat);
+            fd.append('deskripsi', deskripsi);
+            fd.append('jambuka', jambuka);
+            fd.append('hargatiket',hargatiket);
+            fd.append('katagori', katagori);
+            fd.append('namafoto', $('#value_fotoMuseum').get(0).files[0]);
+            /*
             var data = {
               'nama'      : $('#value_namaMuseum').val(),
               'alamat'    : $('#value_alamatMuseum').val(),
@@ -68,9 +86,9 @@
               'jambuka'   : schedule,
               'hargatiket': $('#value_hargaMuseum').val(),
               'katagori'  : ktg,
-              'namafoto'  : "null",
-            };
-            console.log(data);
+              'namafoto'  : $('#value_fotoMuseum').get(0).files(0);,//$('#value_fotoMuseum').files;
+            };*/
+            console.log(fd);
             $.ajaxSetup({
                 headers: {
                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -80,10 +98,14 @@
             $.ajax({
                 url: "/beranda",
                 type:"POST",
-                data:data,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                cache: false,
+                data: fd,//data
                 dataType: "json",
                 success:function(response){
-                    alert("OKe");
+                    alert("Informasi museum berhasil dibuat, Silahkan cek pada menu Daftar");
                 },
                 statusCode: {
                   500: function(){
