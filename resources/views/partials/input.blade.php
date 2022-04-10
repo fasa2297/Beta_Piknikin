@@ -28,47 +28,47 @@
           <select id="t_senin" class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option value="Senin: 08.00-18.00">08.00-18.00</option>
             <option value="Senin: 08.00-11.00">08.00-11.00</option>
-            <option value="Senin: Libur">Libur</option>
+            <option value="Senin: Tutup/Libur">Libur</option>
           </select>
 
           Selasa
           <select id="t_selasa" class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option value="Selasa: 08.00-18.00">08.00-18.00</option>
             <option value="Selasa: 08.00-11.00">08.00-11.00</option>
-            <option value="Selasa: Libur">Libur</option>
+            <option value="Selasa: Tutup/Libur">Libur</option>
           </select>
 
           Rabu
           <select id="t_rabu" class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option value="Rabu: 08.00-18.00">08.00-18.00</option>
             <option value="Rabu: 08.00-11.00">08.00-11.00</option>
-            <option value="Rabu: Libur">Libur</option>
+            <option value="Rabu: Tutup/Libur">Libur</option>
           </select>
 
           Kamis
           <select id="t_kamis" class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option value="Kamis: 08.00-18.00">08.00-18.00</option>
             <option value="Kamis: 08.00-11.00">08.00-11.00</option>
-            <option value="Kamis: Libur">Libur</option>
+            <option value="Kamis: Tutup/Libur">Libur</option>
           </select>
           <div class="harikekanan">
             Jumat
             <select id="t_jumat" class="form-select form-select-sm" aria-label=".form-select-sm example">
               <option value="Jumat: 08.00-18.00">08.00-18.00</option>
               <option value="Jumat: 08.00-11.00">08.00-11.00</option>
-              <option value="Jumat: Libur">Libur</option>
+              <option value="Jumat: Tutup/Libur">Libur</option>
             </select>
             Sabtu
             <select id="t_sabtu" class="form-select form-select-sm" aria-label=".form-select-sm example">
               <option value="Sabtu: 08.00-18.00">08.00-18.00</option>
               <option value="Sabtu: 08.00-11.00">08.00-11.00</option>
-              <option value="sabtu: Libur">Libur</option>
+              <option value="sabtu: Tutup/Libur">Libur</option>
             </select>
             Minggu
             <select id="t_minggu" class="form-select form-select-sm" aria-label=".form-select-sm example">
               <option value="Minggu: 08.00-18.00">08.00-18.00</option>
               <option value="Minguu: 08.00-11.00">08.00-11.00</option>
-              <option value="Minggu: Libur">Libur</option>
+              <option value="Minggu: Tutup/Libur">Libur</option>
             </select>
           </div>
         </div>
