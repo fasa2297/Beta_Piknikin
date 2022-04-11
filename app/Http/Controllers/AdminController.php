@@ -14,6 +14,7 @@ class AdminController extends Controller
        return view ('login', compact('title')); //Compact method
        //return view ('login')->with('title', $title); //With method
     }
+    /*-------------------Beranda input museum------------------ */
     public function beranda(){
         $title = "Beranda";
         return view ('beranda', compact('title'));
@@ -28,8 +29,7 @@ class AdminController extends Controller
        $museum->jambuka = $request->input('jambuka');
        $museum->hargatiket = $request->input('hargatiket');
        $museum->katagori = $request->input('katagori');
-       
-       //$museum->namafoto = $request->input('namafoto');
+
        if($request->hasFile('namafoto')) {
             $file = $request->file('namafoto');
             $extension = $file->getClientOriginalExtension();
@@ -43,23 +43,48 @@ class AdminController extends Controller
             "statusCode"=>200
         ));
     }
-
+    /*-------------------Daftar Museum------------------ */
     public function daftar(){
         $title = "Daftar";
         $prod = Museum::all();
         return view ('daftar', ['lists' => $prod, 'title' => $title]);
     }
 
-    public function daftarMuseum(){/*
-        $museum = Museum::all();
-        return response()->json([
-            'museum'=>$museum,
-        ]);
-        public function show($id)
-        */
-        return Tiket::find($id);
+    public function daftarMuseum(){
+        return Museum::find($id);
     }
 
+    public function edit($id)
+    {
+        return view('editdaftar', [
+            'title' => 'Edit',
+            'method' => 'PUT',
+            'action' => "daftar/$id",
+            'data' => Museum::find($id)
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $prod = Museum::find($id);
+        $prod->id = $request->id;
+        $prod->nama = $request->nama;
+        $prod->alamat = $request->alamat;
+        $prod->deskripsi = $request->deskripsi;
+        $prod->jambuka = $request->jambuka;
+        $prod->hargatiket = $request->hargatiket;
+        $prod->katagori = $request->katagori;
+        $prod->save();
+        return redirect('/daftar')->with('msg', 'Data Museum Berhasil Diperbaharui');
+    }
+
+    public function destroy($id)
+    {
+        Museum::destroy($id);
+        return redirect('/daftar')->with('msg', 'Data Museum Berhasil Dihapus');
+    }
+
+    /*-------------------Riwayat Pemesanan------------------ */
     public function riwayat(){
         $title = "Riwayat";
         return view ('riwayat', compact('title'));

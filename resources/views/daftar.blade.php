@@ -41,16 +41,9 @@
                     <td>{{$list->hargatiket}}</td>
                     <td>{{$list->katagori}}</td>
                     <td><img src="uploads/dataImage/{{ $list->namafoto }}" width="176px" height="144px" alt="Image"></td>
-                    <!--
-                    <td><a id="button_ubah" type="button" class="btn btn-warning" href="{{ url("riwayat/" . $list->id . "/edit/") }}">Ubah</a></td>
-                    <form method="POST" action="{{ url('riwayat/' . $list->id ) }}">
-                    @csrf
-                    @method('DELETE')
-                        <td><button id="button_hapus" class="btn btn-danger">Hapus</button></td>
-                    </form>
-                    -->
-                    <td><a id="button_ubah" type="button" class="btn btn-warning" href="{{ url("daftar/" . $list->id . "/edit/") }}">Ubah</a></td>
-                    <form method="POST" action="{{ url('daftar/' . $list->id ) }}">
+                    
+                    <td><a id="button_ubah" type="button" class="btn btn-warning" href="{{ url("daftar/" . $list->id . "/editdaftar/") }}">Ubah</a></td>
+                    <form method="POST" action="{{ url('daftar/' . $list->id ) }}"  style="display:inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data museum tersebut?')">
                     @csrf
                     @method('DELETE')
                         <td><button id="button_hapus" class="btn btn-danger">Hapus</button></td>
