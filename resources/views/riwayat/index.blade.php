@@ -21,14 +21,14 @@
         <thead>
           <tr>
             <th scope="col" class="col col-lg-0">No</th>
-            <th scope="col" class="col col-lg-2">Nama Pemesan</th>
-            <th scope="col" class="col col-lg-2">Nama Museum</th>
+            <th scope="col" class="col col-lg-1">Pemesan</th>
+            <th scope="col" class="col col-lg-2">Museum</th>
             <th scope="col" class="col col-lg-1">Tanggal</th>
             <th scope="col" class="col col-lg-1">No Telepon</th>
-            <th scope="col" class="col col-lg-2">Jumlah Pesanan Tiket</th>
-            <th scope="col" class="col col-lg-2">Total Harga Tiket</th>
-            <th id="col_ubah" scope="col" class="col col-lg-1">Ubah Pesanan</th>
-            <th id="col_hapus"  scope="col" class="col col-lg-1">Hapus Pesanan</th>
+            <th scope="col" class="col col-lg-2">Jumlah Tiket</th>
+            <th scope="col" class="col col-lg-1">Total Harga</th>
+            <th id="col_ubah" scope="col" class="col col-lg-2">Ubah Pesanan</th>
+            <th id="col_hapus"  scope="col" class="col col-lg-2">Hapus Pesanan</th>
           </tr>
         </thead>
         <tbody>

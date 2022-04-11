@@ -20,11 +20,11 @@
                     <input type="text" name="id" class="form-control" value="{{isset($data)?$data->id:'' }}" readonly/>
                 </div>
                 <div class="form-group" style="display:flex; flex-direction: row;">
-                    <label class="col-sm-2 col-form-label" style="padding:10px;">Nama Pemesan</label>
+                    <label class="col-sm-2 col-form-label" style="padding:10px;">Pemesan</label>
                     <input type="text" name="namapemesan" class="form-control" value="{{isset($data)?$data->namapemesan:'' }}" />
                 </div>
                 <div class="form-group" style="display:flex; flex-direction: row;">
-                    <label class="col-sm-2 col-form-label" style="padding:10px;">Nama Museum</label>
+                    <label class="col-sm-2 col-form-label" style="padding:10px;">Museum</label>
                     <textarea name="namamuseum" class="form-control">{{isset($data)?$data->namamuseum:'' }}</textarea>
                 </div>
                 <div class="form-group" style="display:flex; flex-direction: row;">
@@ -32,7 +32,7 @@
                     <textarea name="tanggal" class="form-control">{{isset($data)?$data->tanggal:'' }}</textarea>
                 </div>
                 <div class="form-group" style="display:flex; flex-direction: row;">
-                    <label class="col-sm-2 col-form-label" style="padding:10px;">No Telp</label>
+                    <label class="col-sm-2 col-form-label" style="padding:10px;">No Telepon</label>
                     <textarea name="notelp" class="form-control">{{isset($data)?$data->notelp:'' }}</textarea>
                 </div>
                 <div class="form-group" style="display:flex; flex-direction: row;">
