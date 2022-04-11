@@ -80,7 +80,7 @@
     color: rgb(255, 98, 98);
     border: 1px absolute blue;
     border-radius: 0.5rem;
-    /*background-color: rgb(250, 227, 227);*/
+    background-color: rgb(250, 227, 227);
     font-weight: normal;
     padding: 7px;
 }

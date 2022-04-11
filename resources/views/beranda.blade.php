@@ -31,7 +31,7 @@
                 <label>
                 *Maksimal hanya 1 foto dalam 1 file .jpg/.jpeg/.png<br/>
                 *Ulangi unggah foto untuk merubah file foto</label><br/><br/>
-                <input type="file" id="value_fotoMuseum" name="value_fotoMuseum" onchange="showPreview(event);" accept="image/*"/>
+                <input type="file" class="form-control" id="value_fotoMuseum" name="value_fotoMuseum" onchange="showPreview(event);" accept="image/*"/>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" id="showimage">Simpan</button>
@@ -107,7 +107,7 @@
                   }
               });
             }else{
-              alert("Silahkan inputkan data");
+              alert("Silahkan lengkapi input data");
             }  
           });
       });

@@ -30,6 +30,7 @@ Route::post('/beranda', [AdminController::class, 'store']);
 
 //Route Daftar
 Route::get('/daftar', [AdminController::class, 'daftar']);
+Route::get('/daftar-museum', [AdminController::class, 'daftarMuseum']);
 
 //Route Riwayat
 Route::get('/riwayat', [RiwayatController::class, 'index'])->name('index');

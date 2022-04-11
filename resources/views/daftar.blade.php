@@ -7,9 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="property/daftar_styles.css" />
     <script type="text/javascript" src="property/daftar_script.js"></script>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    -->
     <title>Piknikin | {{ $title }}</title>
 </head>
 <body>
@@ -17,49 +14,52 @@
     <div class="container-content">
         <p id="text-1">Daftar</p>
         <p id="text-2">Tempat Wisata Museum</p>
-      <table class="table table-hover table-bordered" style="text-align: center">
-        <thead>
-          <tr>
-            <th scope="col" class="col col-lg-1">No</th>
-            <th scope="col" class="col col-lg-3">Nama Museum</th>
-            <th id="col_ubah" scope="col" class="col col-lg-2">Ubah Data Museum</th>
-            <th id="col_hapus"  scope="col" class="col col-lg-2">Hapus Data Museum</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td scope="row mb-3">1</td>
-              <td>Museum Sonobudoyo</td>
-              <td><button id="button_ubah" type="button" class="btn btn-warning">Ubah</button></td>
-              <td><button id="button_hapus" type="button" class="btn btn-danger">Hapus</button></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered" style="text-align: center">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nama Museum</th>
+              <th>Alamat</th>
+              <th class="col col-lg-3">Deskripsi</th>
+              <th class="col col-lg-2">Jadwal</th>
+              <th>Harga</th>
+              <th>Katagori</th>
+              <th>Foto</th>
+              <th>Ubah</th>
+              <th>Hapus</th>
+            </tr>
+          </thead>
+          <tbody>
+          @foreach($lists as $list)
+            <tr>
+                <td scope="row mb-9">{{$list->id}}</td>
+                    <td>{{$list->nama}}</td>
+                    <td>{{$list->alamat}}</td>
+                    <td>{{$list->deskripsi}}</td>
+                    <td>{{$list->jambuka}}</td>
+                    <td>{{$list->hargatiket}}</td>
+                    <td>{{$list->katagori}}</td>
+                    <td><img src="uploads/dataImage/{{ $list->namafoto }}" width="176px" height="144px" alt="Image"></td>
+                    <!--
+                    <td><a id="button_ubah" type="button" class="btn btn-warning" href="{{ url("riwayat/" . $list->id . "/edit/") }}">Ubah</a></td>
+                    <form method="POST" action="{{ url('riwayat/' . $list->id ) }}">
+                    @csrf
+                    @method('DELETE')
+                        <td><button id="button_hapus" class="btn btn-danger">Hapus</button></td>
+                    </form>
+                    -->
+                    <td><a id="button_ubah" type="button" class="btn btn-warning" href="{{ url("daftar/" . $list->id . "/edit/") }}">Ubah</a></td>
+                    <form method="POST" action="{{ url('daftar/' . $list->id ) }}">
+                    @csrf
+                    @method('DELETE')
+                        <td><button id="button_hapus" class="btn btn-danger">Hapus</button></td>
+                    </form>
+                </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
     </div>
-
-
-    <!--
-    <div class="container-content">
-      <p id="text-1">Beranda</p>
-      <p id="text-2">Daftar wisata Museum</p>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th id="index">Nama Museum</th>
-            <th id="col_nama">Nama Museum</th>
-            <th id="col_edit">Edit</th>
-            <th id="col_hapus">Hapus</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Museum</td>
-            <th><a type="Edit" id="edit" href="#">📝</a></th>
-            <th><a type="Hapus" id="hapus" href="#">❌</a></th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  -->
 </body>
 </html>

@@ -18,10 +18,7 @@ class AdminController extends Controller
         $title = "Beranda";
         return view ('beranda', compact('title'));
     }
-    public function create(){
-        $title = "Beranda";
-        return view ('beranda', compact('title'));
-    }
+
     public function store(Request $request){
 
        $museum = new Museum;
@@ -49,7 +46,18 @@ class AdminController extends Controller
 
     public function daftar(){
         $title = "Daftar";
-        return view ('daftar', compact('title'));
+        $prod = Museum::all();
+        return view ('daftar', ['lists' => $prod, 'title' => $title]);
+    }
+
+    public function daftarMuseum(){/*
+        $museum = Museum::all();
+        return response()->json([
+            'museum'=>$museum,
+        ]);
+        public function show($id)
+        */
+        return Tiket::find($id);
     }
 
     public function riwayat(){
