@@ -16,7 +16,7 @@
     @include('partials.navbar')
     <div class="container-content">
       <p id="text-1">Riwayat</p>
-      <p id="text-2">Pembelian Tiket Wisata Museum</p>
+      <p id="text-2">Pemesanan Tiket Wisata Museum</p>
       <table class="table table-hover table-bordered" style="text-align: center">
         <thead>
           <tr>
