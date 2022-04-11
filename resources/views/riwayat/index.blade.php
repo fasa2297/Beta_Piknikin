@@ -42,7 +42,7 @@
                     <td>{{$list->jumlahtiket}}</td>
                     <td>{{$list->totalHrgtiket}}</td>
                     <td><a id="button_ubah" type="button" class="btn btn-warning" href="{{ url("riwayat/" . $list->id . "/edit/") }}">Ubah</a></td>
-                    <form method="POST" action="{{ url('riwayat/' . $list->id ) }}">
+                    <form method="POST" action="{{ url('riwayat/' . $list->id ) }}"  style="display:inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data pemesanan tiket tersebut?')">
                     @csrf
                     @method('DELETE')
                         <td><button id="button_hapus" class="btn btn-danger">Hapus</button></td>

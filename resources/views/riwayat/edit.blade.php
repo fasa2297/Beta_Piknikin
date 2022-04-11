@@ -12,7 +12,7 @@
     <div class="row justify-content-center" style="margin-top:2%">
         <div class="col-6">
             <h4 class="text-center mb-4"><b>Edit Pemesanan Tiket</b></h4>
-            <form class="border" style="padding:20px" method="POST" action="/{{$action }}">
+            <form class="border" style="padding:20px" method="POST" action="/{{$action }}" style="display:inline" onsubmit="return confirm('Apakah Anda yakin ingin mengubah data pemesanan tiket tersebut?')">
                 @csrf
                 <input type="hidden" name="_method" value="{{ $method }}" />
                 <div class="form-group" style="display:flex; flex-direction: row;">
