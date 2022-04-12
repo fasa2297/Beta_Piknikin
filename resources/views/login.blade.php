@@ -21,18 +21,19 @@
         <p id="t-password">Password</p>
         <p id="t-notif"></p>
         <div class="Input">
-          <input type="text" id="input_username" class="Input-text" placeholder="&nbsp;Username" require="" />
-          <input type="password" id="input_password" class="Input-text" placeholder="&nbsp;Password" require="" />
-          <script>
-            var input = document.getElementById("input_password");
-            input.addEventListener("keyup", function (event) {
-              if (event.keyCode === 13) {
-                event.preventDefault();
-                document.getElementById("button-login").click();
-              }
-            });
-          </script>
-          <button id="button-login"><a id="text-4" onclick="ValidateLogin()">Login</a</button>
+              <input type="text" name="name" id="input_username" class="Input-text" placeholder="&nbsp;Username" require="" />
+              <input type="password" name="password" id="input_password" class="Input-text" placeholder="&nbsp;Password" require="" />
+              <script>
+                var input = document.getElementById("input_password");
+                input.addEventListener("keyup", function (event) {
+                    if (event.keyCode === 13) {
+                      event.preventDefault();
+                      ValidateLogin(event);
+                      document.getElementById("button-login").click();
+                    }
+                });
+              </script>
+              <button id="button-login" onclick="ValidateLogin()"><a id="text-4">Login</a</button>
         </div>
       </div>
     </div>
