@@ -76,7 +76,7 @@
 <!--Harga Museum dan Katagori Museum-->
         <div class="in_hargaMuseum">
           <a>Harga Tiket Museum</a><a id="notifnull_Harga">&nbsp;</a><br />
-          <input id="value_hargaMuseum" type="text" placeholder="Rp." />
+          <input id="value_hargaMuseum" type="tel" onkeypress="return onlyNumberKey(event)" placeholder="Rp." />
         </div>
         <br />
 

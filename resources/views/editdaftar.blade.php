@@ -39,7 +39,15 @@
                 </div>
                 <div class="form-group" style="display:flex; flex-direction: row;">
                     <label class="col-sm-2 col-form-label" style="padding:10px;">Harga Tiket</label>
-                    <textarea type="text" name="hargatiket" class="form-control">{{isset($data)?$data->hargatiket:'' }}</textarea>
+                    <input type="tel" name="hargatiket"  onkeypress="return onlyNumberKey(event)" class="form-control" value="{{isset($data)?$data->hargatiket:'' }}"/>
+                    <script>
+                        function onlyNumberKey(evt) {
+                            // Only ASCII character in that range allowed
+                            var ASCIICode = evt.which ? evt.which : evt.keyCode;
+                            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) return false;
+                            return true;
+                        }
+                    </script>
                 </div>
                 <div class="form-group" style="display:flex; flex-direction: row;">
                     <label class="col-sm-2 col-form-label" style="padding:10px;">Katagori</label>
