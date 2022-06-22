@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Museum;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MuseumApiController extends Controller
 {
@@ -19,10 +20,10 @@ class MuseumApiController extends Controller
     }
 
     public function showKatagori($katagori){
-        $museums = Museum::find($katagori);
+        $museums = DB::table('museums')->where('katagori', $katagori)->get();
         return response()->json(['message' => 'Success', 'data' => $museums]);
     }
-    
+    /*
     public function store(Request $request){
         $product = Product::create($request-all());
         return response()->json(['message' => 'Success: --data inserted','data' => $museums]);
@@ -32,5 +33,5 @@ class MuseumApiController extends Controller
         $product = Product::find($id);
         $product = update($request->all());
         return response()->json(['message' => 'Success: --data updated','data' => $museums]);
-    }
+    }*/
 }

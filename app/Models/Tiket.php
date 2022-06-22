@@ -11,7 +11,7 @@ class Tiket extends Model
     protected $primaryKey = 'id';
     public $incrementing = false;
     protected $table ='tikets';
-    protected $filltable = [
+    protected $fillable = [
         'namapemesan',
         'namamuseum',
         'tanggal',
