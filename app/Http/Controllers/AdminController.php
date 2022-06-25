@@ -29,7 +29,6 @@ class AdminController extends Controller
        $museum->jambuka = $request->input('jambuka');
        $museum->hargatiket = $request->input('hargatiket');
        $museum->katagori = $request->input('katagori');
-
        if($request->hasFile('namafoto')) {
             $file = $request->file('namafoto');
             $extension = $file->getClientOriginalExtension();
@@ -37,6 +36,7 @@ class AdminController extends Controller
             $file->move('uploads/dataImage', $filename);
             $museum->namafoto = $filename;
         }
+        $museum->linkfoto = $request->input('linkfoto');
         $museum->save();
         
         return json_encode(array(

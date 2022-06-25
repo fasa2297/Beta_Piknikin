@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('hargatiket');
             $table->string('katagori');
             $table->string('namafoto');
+            $table->string('linkfoto');
             $table->timestamps();
 
         });

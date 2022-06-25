@@ -40,8 +40,14 @@
               </div>
             </div>
           </div>
-          <img id="image-preview" alt="image preview"/><br/>
-          <ul id="savefrom_errList"></ul>
+            <img id="image-preview" alt="image preview"/><br/>
+            <ul id="savefrom_errList"></ul>
+
+            <div class="in_linkFoto">
+              <a>Link Foto</a><a id="notifnull_linkfoto">&nbsp;</a><br />
+              <input id="value_linkFoto" type="text" />
+            </div>
+            
         </div>
         <br/>
         <button class="btn btn-danger run" id="button_submit" type="submit" value="Buat Destinasi" style="width: 150px" onclick="ValidateForm()">Buat Destinasi</button>
@@ -69,6 +75,7 @@
             var hargatiket= $('#value_hargaMuseum').val();
             var katagori  = document.querySelector('input[name="ktg"]:checked').value;
             var namafoto  = $('#value_fotoMuseum').val();
+            var linkfoto = $('#value_linkFoto').val(); 
 
             if(nama!="" || alamat!="" || deskripsi!="" || hargatiket!=""){
               fd = new FormData();
@@ -79,6 +86,7 @@
               fd.append('hargatiket',hargatiket);
               fd.append('katagori', katagori);
               fd.append('namafoto', $('#value_fotoMuseum').get(0).files[0]);
+              fd.append('linkfoto', linkfoto);
               
               console.log(fd);
               $.ajaxSetup({

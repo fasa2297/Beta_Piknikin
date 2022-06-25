@@ -16,6 +16,7 @@ class Museum extends Model
         'jambuka',
         'hargatiket',
         'katagori',
-        'namafoto'
+        'namafoto',
+        'linkfoto'
     ];
 }
